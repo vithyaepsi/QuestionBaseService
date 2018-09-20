@@ -8,19 +8,19 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public class BaseService<T, K> {
+public class BaseService<REPO extends JpaRepository<C, Integer>, C> {
 
 	@Autowired
-	protected JpaRepository<T, K> genericRepository;
+	protected REPO repository;
 	
 	@Transactional(rollbackOn = EntityNotFoundException.class)
-	public void save(T thing){
-		this.genericRepository.save(thing);
+	public void save(C thing){
+		this.repository.save(thing);
 	}
 	
 	@Transactional(rollbackOn = EntityNotFoundException.class)
-	public List<T> findAll(){
-		final List<T> thing = this.genericRepository.findAll();
+	public List<C> findAll(){
+		final List<C> thing = this.repository.findAll();
 		if( thing == null ) {
 			throw new EntityNotFoundException();
 		}

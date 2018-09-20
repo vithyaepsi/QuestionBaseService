@@ -11,13 +11,11 @@ import com.vithya.questions.repository.PeopleRepository;
 import com.vithya.questions.service.base.BaseService;
 
 @Service
-public class PeopleServiceImpl extends BaseService<People, Integer> {
-	@Autowired 
-	private PeopleRepository peopleRepository;
+public class PeopleServiceImpl extends BaseService<PeopleRepository, People> {
 	
 	@Transactional(rollbackOn = EntityNotFoundException.class)
 	public People findByFirstnameAndAge(String firstname, int age){
-		return peopleRepository.findByFirstnameAndAge(firstname, age);
+		return this.repository.findByFirstnameAndAge(firstname, age);
 	}
 	
 }

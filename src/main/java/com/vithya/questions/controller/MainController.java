@@ -9,9 +9,7 @@ import com.vithya.questions.service.PeopleServiceImpl;
 
 @Controller
 public class MainController {
-	
-	@Autowired
-	private PeopleServiceImpl peopleService;
+	@Autowired private PeopleServiceImpl peopleService;
 	
 	@RequestMapping("/")
 	public String trucmachin() {

@@ -1,4 +1,4 @@
-package com.vithya.service.base;
+package com.vithya.questions.service.base;
 
 import java.util.List;
 

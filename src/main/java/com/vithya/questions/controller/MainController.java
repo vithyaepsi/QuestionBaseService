@@ -5,7 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.vithya.questions.model.People;
-import com.vithya.service.PeopleServiceImpl;
+import com.vithya.questions.service.PeopleServiceImpl;
 
 @Controller
 public class MainController {

@@ -1,4 +1,4 @@
-package com.vithya.repository;
+package com.vithya.questions.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
